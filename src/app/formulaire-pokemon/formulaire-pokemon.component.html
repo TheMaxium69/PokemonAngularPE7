@@ -1,0 +1,25 @@
+<br>
+<div class="container">
+
+  <form #addForm="ngForm" (ngSubmit)="onSubmit(addForm)">
+
+    <div class="mb-3">
+      <input placeholder="Name" type="text" class="form-control" name="name" ngModel required>
+    </div>
+    <div class="mb-3">
+      <input placeholder="hp" type="text" class="form-control" name="hp" ngModel required>
+    </div>
+    <div class="mb-3">
+      <input placeholder="cp" type="text" class="form-control" name="cp" ngModel required>
+    </div>
+    <div class="mb-3">
+      <input placeholder="Picture URL" type="text" class="form-control" name="picture" ngModel required>
+    </div>
+    <div class="mb-3">
+      <input placeholder="types" type="text" class="form-control" name="types" ngModel required>
+    </div>
+    <button type="submit" class="btn btn-primary">Envoyé votre giga pokémon</button>
+
+  </form>
+
+</div>

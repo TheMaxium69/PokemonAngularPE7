@@ -1,0 +1,42 @@
+<div class="card-group">
+
+  <div *ngFor="let pokemonOne of pokemonAll; let index = index">
+
+    <div class="card" style="width: 18rem;">
+      <img src="{{ pokemonOne.picture }}" class="card-img-top" alt="{{ pokemonOne.name }}">
+      <div class="card-body">
+        <h5 class="card-title">{{ pokemonOne.name }}</h5>
+        <p class="card-text">hp : {{ pokemonOne.hp }}</p>
+        <p class="card-text">cp : {{ pokemonOne.cp }}</p>
+        <p class="card-text">types : {{ pokemonOne.types }}</p>
+        <a (click)="showPokemonOne(pokemonOne.id)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#affichePokemon">View</a>
+        <a (click)="deletePokemonOne(pokemonOne.id, index)" class="btn btn-danger">Supprimer</a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<h2>{{ MessageAAfficher }}</h2>
+
+<!--- MODAL --->
+<div class="modal fade text-center" id="affichePokemon" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{ pokemonSelected?.name }}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="{{ pokemonSelected?.picture }}" style="width: 15em" alt="{{ pokemonSelected?.name }}">
+        <p>hp : {{ pokemonSelected?.hp }}</p>
+        <p>cp : {{ pokemonSelected?.cp }}</p>
+        <p>types : {{ pokemonSelected?.types }}</p>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
